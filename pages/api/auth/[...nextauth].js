@@ -19,7 +19,7 @@ async function refreshAccessToken(token){
         }
 
     } catch(error){
-        console.log(error)
+        console.error(error)
 
         return {
             ...token,
@@ -62,8 +62,8 @@ export default NextAuth({
                 return token;
             };
 
-            // Access token expired, need to refresh it... 
-            console.log("ACCESS TOKEN IS EXPIRED, REFRESHING...");
+            // Access token has expired, need to refresh it... 
+            console.log("ACCESS TOKEN HAS EXPIRED, REFRESHING...");
             return await refreshAccessToken(token);
         },
 
